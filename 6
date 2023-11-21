@@ -1,0 +1,45 @@
+//6
+#include<stdio.h>
+#define N 5
+void malei(int arr[][N], int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		int cou = 1;
+		while (i >= cou)
+		{
+			int temp = *(arr[i] + cou - 1);
+			*(arr[i] + cou - 1) = *(arr[cou - 1] + i);
+			*(arr[cou - 1] + i) = temp;
+			cou++;
+		}
+	}
+}
+int main()
+{
+	int arr[N][N]={10,23,45,56,78,
+				   56,45,45,89,25,
+				   95,23,29,73,67,
+				   66,36,30,99,65,
+				   86,61,29,39,50 };
+	printf("前\n");
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < N; j++)
+		{
+			printf("%d ", arr[i][j]);
+		}
+		printf("\n");
+	}
+	malei(arr, N);
+	printf("后\n");
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < N; j++)
+		{
+			printf("%d ", arr[i][j]);
+		}
+		printf("\n");
+	}
+	return 0;
+}
