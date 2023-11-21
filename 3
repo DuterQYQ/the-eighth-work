@@ -1,0 +1,25 @@
+//3
+#include<stdio.h>
+void taken(double a, int* z, double* x)
+{
+	if (a >= 0)
+	{
+		*z = (int)a;
+		*x = a - *z;
+	}
+	else
+	{
+		*z = (int)a - 1;
+		*x = a - *z;
+	}
+}
+int main()
+{
+	double a = 0;
+	int z = 0;
+	double x = 0;
+	scanf("%lf", &a);
+	taken(a, &z, &x);
+	printf("%d\n%lf\n", z, x);
+	return 0;
+}
