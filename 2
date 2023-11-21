@@ -1,0 +1,16 @@
+//2
+#include<stdio.h>
+void sum_diff(float op1, float op2, float* psum, float* pdiff)
+{
+	*psum = op1 + op2;
+	*pdiff = op1 - op2;
+}
+int main()
+{
+	float a, b;
+	float sum = 0, diff = 0;
+	scanf("%f%f", &a, &b);
+	sum_diff(a, b, &sum, &diff);
+	printf("%f %f", sum, diff);
+	return 0;
+}
