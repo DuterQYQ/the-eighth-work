@@ -1,0 +1,26 @@
+//4
+#include<stdio.h>
+void MixFac(int arr[], int n, int* max, int* min, double* ave)
+{
+	long long sum = 0;
+	*max = arr[0];
+	*min = arr[0];
+	for (int i = 0; i < n; i++)
+	{
+		sum += arr[i];
+		if (arr[i] > *max)
+			*max = arr[i];
+		if (arr[i] < *min)
+			*min = arr[i];
+	}
+	*ave = sum / n;
+}
+int main()
+{
+	int arr[10] = { 233,4,55,78,40,54,2,66,8,34 };
+	int max, min;
+	double ave;
+	MixFac(arr, 10, &max, &min, &ave);
+	printf("max=%d min=%d average=%lf", max, min, ave);
+	return 0;
+}
